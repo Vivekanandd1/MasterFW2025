@@ -6,6 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -17,10 +20,12 @@ public class WebDriverFactory {
     public static WebDriver getWebDriverForBrowser(String browser) throws Exception {
         switch(browser.toLowerCase()){
             case "chrome":
+            	WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 logger.info("Chrome Browser invoked");
                 break;
             case "firefox":
+            	WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 logger.info("Firefox Browser invoked");
                 break;
