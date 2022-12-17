@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 	@CucumberOptions(
 	        features="classpath:features",
 	        glue="stepdefs", 
-	        tags="@t4", 
+	        tags=" ", 
 	        plugin = {"pretty",
 	            "html:target/html/htmlreport.html",
 	            "json:target/json/file.json",
