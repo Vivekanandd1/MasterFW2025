@@ -10,6 +10,11 @@ public class SeleniumCodeFirst {
 		driver.findElement(By.id("inputUsername")).sendKeys("unknows");
 		driver.findElement(By.cssSelector("input[name='inputPassword']")).sendKeys("unknows");
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
+		driver.findElement(By.linkText("Forgot your password?")).click();
+		driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("Daryl Dixon");
+		driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("Daryl@yopmail.com");
+		
+		
 	}
 
 }
