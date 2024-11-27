@@ -15,6 +15,9 @@ public class SeleniumCodeFirst {
 		driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("Damys@yopmail.com");
 		driver.findElement(By.xpath("//input[@placeholder='Email']")).clear();
 		driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("daryl@yopmail.com");
+		driver.findElement(By.xpath("//input[@placeholder='Phone Number']")).sendKeys("7441188213");
+		driver.findElement(By.className("reset-pwd-btn")).click();
+		
 	}
 
 }
