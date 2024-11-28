@@ -15,6 +15,8 @@ public class LoginAndLogout {
 		Thread.sleep(1000);
 		System.out.println(driver.findElement(By.tagName("p")).getText());
 		Assert.assertEquals(driver.findElement(By.tagName("p")).getText(), "You are successfully logged in.");
+		driver.findElement(By.xpath("//button[contains(@class,'logout')]")).click();
+		
 		Thread.sleep(2000);
 		driver.quit();
 	}
