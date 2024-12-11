@@ -13,6 +13,10 @@ public class DropDowns {
 		for (int i=0; i<5; i++) {
 			driver.findElement(By.xpath("//div[@data-testid='Adult-testID-plus-one-cta']")).click();
 		}
+		
+		driver.findElement(By.xpath("//div[text()='Departure Date']")).click();
+		driver.findElement(By.xpath("//div[@data-testid='undefined-month-December-2024']//div//div[text()='11']")).click();
+	
 	}
 
 }
