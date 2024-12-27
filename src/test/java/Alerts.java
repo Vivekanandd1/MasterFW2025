@@ -20,6 +20,9 @@ public class Alerts {
 		driver.findElement(By.id("confirmbtn")).click();
 		Thread.sleep(2000);
 		driver.switchTo().alert().dismiss();
+		Thread.sleep(2000);
+		driver.quit();
+		
 	}
 
 }
