@@ -16,6 +16,13 @@ public class ECommerce {
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		String[] itemsNeeded = { "Brocolli", "Cucumber" };
+		ECommerce E = new ECommerce();
+		E.AddItem(driver, itemsNeeded);
+		driver.findElement(By.cssSelector("img[alt='Cart']")).click();
+		driver.findElement(By.xpath("//button[text()='PROCEED TO CHECKOUT']")).click();
+	}
+	
+	public void AddItem(WebDriver driver,String[] itemsNeeded ) throws InterruptedException {
 		List<WebElement> Products = driver.findElements(By.cssSelector("h4.product-name"));
 		for (int i = 0; i < Products.size(); i++) {
 
@@ -28,13 +35,14 @@ public class ECommerce {
 				j++;
 				driver.findElements(By.xpath("//button[text()='ADD TO CART']")).get(i).click();
 				Thread.sleep(5000);
-				if (j == 2) {
+				if (j==2) {
 					break;
 				}
 
 			}
 		}
 
+		
 	}
 
 }
