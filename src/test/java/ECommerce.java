@@ -7,6 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ECommerce {
 
@@ -20,6 +23,14 @@ public class ECommerce {
 		E.AddItem(driver, itemsNeeded);
 		driver.findElement(By.cssSelector("img[alt='Cart']")).click();
 		driver.findElement(By.xpath("//button[text()='PROCEED TO CHECKOUT']")).click();
+		//rahulshettyacademy
+		driver.findElement(By.cssSelector("input.promocode")).sendKeys("rahulshettyacademy");
+		driver.findElement(By.cssSelector("button.promoBtn")).click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector("span.promoInfo"))));
+		System.out.println(driver.findElement(By.cssSelector("span.promoInfo")).getText());
+		
+		
 	}
 	
 	public void AddItem(WebDriver driver,String[] itemsNeeded ) throws InterruptedException {
