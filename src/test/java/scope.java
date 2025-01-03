@@ -1,4 +1,6 @@
 import java.time.Duration;
+import java.util.Iterator;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -36,6 +38,17 @@ public class scope {
 			Column.findElements(By.tagName("a")).get(i).sendKeys(Click);
 			
 			}
+		
+		Set<String> It=driver.getWindowHandles();
+		Iterator<String> ABC = It.iterator();
+		while (ABC.hasNext()) {
+			driver.switchTo().window(ABC.next());
+			System.out.println(driver.getTitle());
+			
+			
+		}
+		
+		
 		
 	}
       
