@@ -1,3 +1,5 @@
+import static org.testng.Assert.assertEquals;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -6,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class Scrollings {
 	
@@ -23,15 +26,12 @@ public class Scrollings {
 		List<WebElement> values=driver.findElements(By.xpath("//div[@class='tableFixHead']//tbody/tr/td[4]"));
 		int sum=0;
 		for (int i=0;i<values.size();i++) {
-			
-			String value = values.get(i).getText();
-			int value1 = Integer.parseInt(value);
-			System.out.println("value is "+ value1);
-			sum =sum +value1;
-			
+			sum = sum + Integer.parseInt(values.get(i).getText());	
 		}
-		
 		System.out.println("sum is = " + sum);
+		int total = Integer.parseInt(driver.findElement(By.cssSelector("div.totalAmount")).getText().split(":")[1].trim());
+		Assert.assertEquals(sum, total);
+		
 	}
 
 }
