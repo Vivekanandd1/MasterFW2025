@@ -24,7 +24,7 @@ public class Scrollings {
 		int sum=0;
 		for (int i=0;i<values.size();i++) {
 			
-			String value = driver.findElements(By.xpath("//div[@class='tableFixHead']//tbody/tr/td[4]")).get(i).getText();
+			String value = values.get(i).getText();
 			int value1 = Integer.parseInt(value);
 			System.out.println("value is "+ value1);
 			sum =sum +value1;
