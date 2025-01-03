@@ -36,7 +36,7 @@ Monitoring and Reporting: Integrations with tools like Prometheus, Grafana, or E
 
 **Version Control:** Git installed locally.
 
-**CI/CD Tools:** Ensure the required CI/CD platform is configured (e.g., GitHub, Jenkins).
+**CI/CD Tools:** Ensure the required CI/CD platform is configured (Powered by Jenkins).
 
 **Programming Languages:** Java for Scripting.
 
@@ -45,7 +45,7 @@ Monitoring and Reporting: Integrations with tools like Prometheus, Grafana, or E
 **Clone the Repository:**
 
 
-git clone https://github.com/Vivekanandd1/MasterFW2025.git  cd automation-ci-cd  
+git clone https://github.com/Vivekanandd1/MasterFW2025.git    
 
 **Customize for Your Needs:**
 
