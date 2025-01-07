@@ -22,10 +22,10 @@ public class BrokenLink {
 		
 		List<WebElement> links =driver.findElements(By.cssSelector("li[class='gf-li'] a"));
 		for(WebElement link:links) {
-			String url = link.getAttribute("href");
+			String url = link.getDomProperty("href");
 			URI baseUri = new URI(url);
 			//Code for below java 20 version
-			//HttpURLConnection Conn = (HttpURLConnection) new URL(url).openConnection();
+//			HttpURLConnection Conn = (HttpURLConnection) new URL(url).openConnection();
 			//Code for above java 20 version[Line 30 to 31]
 			URL a = baseUri.toURL();
 			HttpURLConnection Conn = (HttpURLConnection) a.openConnection();
@@ -36,7 +36,7 @@ public class BrokenLink {
 			System.out.println("The link " + link.getText() + " Having responsecode as "+ Respcode);
 			
 			
-			
+			//Change the deprecated methods.
 		}
 	}
 
