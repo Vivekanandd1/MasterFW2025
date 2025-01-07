@@ -1,6 +1,8 @@
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.time.Duration;
@@ -12,7 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BrokenLink {
-	public static void main(String[] args) throws MalformedURLException, IOException {
+	public static void main(String[] args) throws MalformedURLException, IOException, URISyntaxException {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
@@ -21,11 +23,19 @@ public class BrokenLink {
 		List<WebElement> links =driver.findElements(By.cssSelector("li[class='gf-li'] a"));
 		for(WebElement link:links) {
 			String url = link.getAttribute("href");
-			HttpURLConnection Conn = (HttpURLConnection) new URL(url).openConnection();
+			URI baseUri = new URI(url);
+			//Code for below java 20 version
+			//HttpURLConnection Conn = (HttpURLConnection) new URL(url).openConnection();
+			//Code for above java 20 version[Line 30 to 31]
+			URL a = baseUri.toURL();
+			HttpURLConnection Conn = (HttpURLConnection) a.openConnection();
+			//HEAD: Retrieves the headers of a resource without fetching the entire content
 			Conn.setRequestMethod("HEAD");
 			Conn.connect();
 			int Respcode= Conn.getResponseCode();
-			System.out.println("The link " + link.getText() + " Having responsecoed as "+ Respcode);
+			System.out.println("The link " + link.getText() + " Having responsecode as "+ Respcode);
+			
+			
 			
 		}
 	}
