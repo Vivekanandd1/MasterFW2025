@@ -19,19 +19,19 @@ public class MainClass {
 		String Productname = "IPHONE 13 PRO";
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://rahulshettyacademy.com/client");
+		 LoginPage loginPage = new LoginPage(driver);
+		 Products productCatlogue = new Products(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(15));
+		loginPage.goTo();
 		// Deshmukh@yopmail.com
 		// Deshmukh@123
-		driver.findElement(By.id("userEmail")).sendKeys("Deshmukh@yopmail.com");
-		driver.findElement(By.id("userPassword")).sendKeys("Deshmukh@123");
-		driver.findElement(By.id("login")).click();
-		List<WebElement> Products = driver.findElements(By.cssSelector(".mb-3"));
+		loginPage.Login("Deshmukh@yopmail.com", "Deshmukh@123");
+		List<WebElement> Products = productCatlogue.Productlist();
 //		WebElement Products = driver.findElement(By.cssSelector(".mb-3"));
 //		List<WebElement> Text = Products.findElements(By.cssSelector("b"));
 //		Text.stream().forEach(s->System.out.println(s.getText()));
-
+		
 		WebElement MyProduct = Products.stream()
 				.filter(Product -> Product.findElement(By.cssSelector("b")).getText().equals(Productname)).findFirst()
 				.orElseGet(null);
