@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import AbstractComponents.AbstractComponent;
 
@@ -21,12 +22,36 @@ public class Products extends AbstractComponent{
 
 	@FindBy(css=".mb-3")
 	List<WebElement> Products;
-	By ProductList = By.cssSelector(".mb-3");
 	
-	public List<WebElement> Productlist() {
+	By ProductList = By.cssSelector(".mb-3");
+	By ActualProduct = By.cssSelector("button.w-10");
+	By Spinner = By.cssSelector("#toast-container");
+	By CartBtn = By.xpath("//button[@routerlink='/dashboard/cart']");
+	
+	
+	public List<WebElement> getProductlist() {
 		ElementToAppear(ProductList);
 		return Products;
 	}
 	
+	public WebElement GetProductByName(String Productname) {
+		WebElement MyProduct = getProductlist().stream()
+				.filter(Product -> Product.findElement(By.cssSelector("b")).getText().equals(Productname)).findFirst()
+				.orElseGet(null);
+		return MyProduct;
+	}
 	
+	public void addToCart(String Productname) {
+		WebElement AddToCartBtn = GetProductByName(Productname).findElement(ActualProduct);
+		ElementToClick(driver.findElement(ActualProduct));
+		AddToCartBtn.click();
+	}
+	
+	public void CartPage() {
+		ElementToAppear(Spinner);
+		ElementToDisappear(Spinner);
+		ElementToAppear(CartBtn);
+		ElementToClick(driver.findElement(CartBtn));
+		driver.findElement(CartBtn).click();
+	}
 }
