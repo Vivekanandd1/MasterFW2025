@@ -15,7 +15,7 @@ import org.testng.Assert;
 
 public class MainClass {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		String Productname = "IPHONE 13 PRO";
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -27,20 +27,18 @@ public class MainClass {
 		// Deshmukh@yopmail.com
 		// Deshmukh@123
 		loginPage.Login("Deshmukh@yopmail.com", "Deshmukh@123");
-		List<WebElement> Products = productCatlogue.Productlist();
+		List<WebElement> Products = productCatlogue.getProductlist();
 //		WebElement Products = driver.findElement(By.cssSelector(".mb-3"));
 //		List<WebElement> Text = Products.findElements(By.cssSelector("b"));
 //		Text.stream().forEach(s->System.out.println(s.getText()));
+		WebElement MyProduct = productCatlogue.GetProductByName(Productname);
 		
-		WebElement MyProduct = Products.stream()
-				.filter(Product -> Product.findElement(By.cssSelector("b")).getText().equals(Productname)).findFirst()
-				.orElseGet(null);
-		MyProduct.findElement(By.cssSelector("button.w-10")).click();
-
-		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector("#toast-container"))));
-		WebElement CartBtn = driver.findElement(By.xpath("//button[@routerlink='/dashboard/cart']"));
-		wait.until(ExpectedConditions.elementToBeClickable(CartBtn));
-		CartBtn.click();
+//		WebElement MyProduct = Products.stream()
+//				.filter(Product -> Product.findElement(By.cssSelector("b")).getText().equals(Productname)).findFirst()
+//				.orElseGet(null);
+		productCatlogue.addToCart(Productname);
+		
+		productCatlogue.CartPage();
 		List<WebElement> CartsProducts = driver.findElements(By.cssSelector(".cartSection h3"));
 		boolean Check = CartsProducts.stream().anyMatch(s -> s.getText().equalsIgnoreCase(Productname));
 		Assert.assertTrue(Check);
@@ -58,6 +56,10 @@ public class MainClass {
 		//driver.findElement(By.xpath("//input[@placeholder='Select Country']")).sendKeys("india");
 		driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
 		driver.findElement(By.cssSelector(".action__submit")).click();
+		
+		//Browser closing code for temporary execution, we be enhanced in the future.
+		Thread.sleep(4000);
+		driver.quit();
 	}
 
 }
