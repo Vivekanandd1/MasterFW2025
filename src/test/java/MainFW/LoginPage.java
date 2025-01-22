@@ -26,13 +26,16 @@ public class LoginPage extends AbstractComponent {
 	@FindBy(id="login")
 	WebElement LoginBtn;
 	
-	public void Login(String Email,String Password) {
+	public Products Login(String Email,String Password) {
 		EmailEle.sendKeys(Email);
 		PasswordEle.sendKeys(Password);
 		LoginBtn.click();
+		Products productCatlogue = new Products(driver);
+		return productCatlogue;
 	}
 	public void goTo() {
 		driver.get("https://rahulshettyacademy.com/client");
+		
 	}
 	
 }
