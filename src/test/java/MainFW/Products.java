@@ -47,11 +47,13 @@ public class Products extends AbstractComponent{
 		AddToCartBtn.click();
 	}
 	
-	public void CartPage() {
+	public CartPage VerifyCartPage() {
 		ElementToAppear(Spinner);
 		ElementToDisappear(Spinner);
 		ElementToAppear(CartBtn);
 		ElementToClick(driver.findElement(CartBtn));
 		driver.findElement(CartBtn).click();
+		CartPage cartPage = new CartPage(driver);
+		return cartPage;
 	}
 }
