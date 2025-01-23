@@ -16,13 +16,14 @@ public class ConfirmationPage extends AbstractComponent {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		ScreenScroll("window.scrollBy(0,0)");
 	}
 	
 	@FindBy(css = "h1.hero-primary" )
 	WebElement ConfirmText;
 	
 	public boolean ConfirmOrder(String ExpectedText) {
-		ScreenScroll("window.scrollBy(0,0)");
+		
 		boolean ActualText = ConfirmText.getText().equalsIgnoreCase(ExpectedText);
 		return ActualText;
 	}

@@ -1,23 +1,24 @@
 package MainFW;
 
+import java.io.IOException;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
-public class MainClass {
+import AbstractComponents.BaseTest;
 
-	public static void main(String[] args) throws InterruptedException {
+public class MainClass extends BaseTest {
+
+	
+	@Test
+	public void SubmitOrder() throws InterruptedException, IOException {
 		String Productname = "IPHONE 13 PRO";
 		String CVV = "123";
 		String CardHolder = "Bryan Adams";
 		String Country = "India";
 		String ConfirmationMessage = "Thankyou for the order.";
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		LoginPage loginPage = new LoginPage(driver);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		loginPage.goTo();
 		Products productCatlogue = loginPage.Login("Deshmukh@yopmail.com", "Deshmukh@123");
 		productCatlogue.addToCart(Productname);
 		CartPage cartPage = productCatlogue.VerifyCartPage();
@@ -27,9 +28,7 @@ public class MainClass {
 		shipping.ProductVerification(CVV, CardHolder, Country);
 		ConfirmationPage CNFRMPage = shipping.SubmitOrder();
 		boolean TxtConfirm = CNFRMPage.ConfirmOrder(ConfirmationMessage);
-		Assert.assertTrue(TxtConfirm);
-		Thread.sleep(4000);
-		driver.quit();
+		Assert.assertTrue(TxtConfirm);	
 	}
 
 }
