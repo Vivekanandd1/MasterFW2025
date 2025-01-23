@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-01-23T09:33:18 IST" name="Default suite" finished-at="2025-01-23T09:33:40 IST" duration-ms="22176">
+    <groups>
+    </groups>
+    <test started-at="2025-01-23T09:33:18 IST" name="Default test" finished-at="2025-01-23T09:33:40 IST" duration-ms="22176">
+      <class name="MainFW.MainClass">
+        <test-method is-config="true" signature="LaunchApp()[pri:0, instance:MainFW.MainClass@5dda768f]" started-at="2025-01-23T09:33:18 IST" name="LaunchApp" finished-at="2025-01-23T09:33:29 IST" duration-ms="11557" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApp -->
+        <test-method signature="SubmitOrder()[pri:0, instance:MainFW.MainClass@5dda768f]" started-at="2025-01-23T09:33:29 IST" name="SubmitOrder" finished-at="2025-01-23T09:33:36 IST" duration-ms="6357" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SubmitOrder -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:MainFW.MainClass@5dda768f]" started-at="2025-01-23T09:33:36 IST" name="TearDown" finished-at="2025-01-23T09:33:40 IST" duration-ms="4158" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+      </class> <!-- MainFW.MainClass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
