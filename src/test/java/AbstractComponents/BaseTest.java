@@ -40,7 +40,7 @@ public class BaseTest {
 		return driver;
 	}
 	
-	@BeforeTest
+	@BeforeTest(alwaysRun = true)
 	public LoginPage LaunchApp() throws IOException {
 		driver = DriverInvoke();
 		loginPage = new LoginPage(driver);
@@ -48,9 +48,9 @@ public class BaseTest {
 		return loginPage;
 	}
 	
-	@AfterTest
+	@AfterTest(alwaysRun = true)
 	public void TearDown() throws InterruptedException {
-		Thread.sleep(4000);
+		
 		driver.close();
 	}
 
