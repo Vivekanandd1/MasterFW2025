@@ -26,8 +26,13 @@ public class LoginPage extends AbstractComponent {
 	@FindBy(id="login")
 	WebElement LoginBtn;
 	
+	@FindBy(css="div.toast-message")
+	WebElement ErrorMsg;
+	
 	public Products Login(String Email,String Password) {
+		EmailEle.clear();
 		EmailEle.sendKeys(Email);
+		PasswordEle.clear();
 		PasswordEle.sendKeys(Password);
 		LoginBtn.click();
 		Products productCatlogue = new Products(driver);
@@ -37,5 +42,10 @@ public class LoginPage extends AbstractComponent {
 		driver.get("https://rahulshettyacademy.com/client");
 		
 	}
+	
+	public String getErrorMsg() {
+		WebElementToAppear(ErrorMsg);
+		 return ErrorMsg.getText();
+		}
 	
 }

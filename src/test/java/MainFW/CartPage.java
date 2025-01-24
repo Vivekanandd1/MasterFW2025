@@ -27,17 +27,22 @@ public class CartPage extends AbstractComponent{
 	@FindBy(css=".totalRow button")
 	WebElement CheckoutBtn;
 	
+	@FindBy(xpath = "//div[@aria-label='Product Added To Cart']")
+	WebElement Alerts;
+	By Alert = By.xpath("//div[@aria-label='Product Added To Cart']");
 	
 	
 	
-	public boolean ProductVerification(String ProductName) {
+	
+	public boolean ProductVerificationCheck(String ProductName) {
 		List<WebElement> CartsProducts = ProductsInCart;
 		boolean Check = CartsProducts.stream().anyMatch(s -> s.getText().equalsIgnoreCase(ProductName));
 		return Check;
 	}
 	
 	public Shipping checkOut() {
-		ScreenScroll("window.scroll(0,400)");
+		ElementToDisappear(Alert);
+		MovetoElements(CheckoutBtn);
 		ElementToClick(CheckoutBtn);
 		CheckoutBtn.click();
 		Shipping shipping = new Shipping(driver);
