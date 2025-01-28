@@ -1,5 +1,6 @@
 package MainFW;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import java.io.IOException;
@@ -14,18 +15,17 @@ import AbstractComponents.OrderPage;
 
 public class MainClass extends BaseTest {
 	
-	String Productname= "IPHONE 13 PRO";
+	String ProductName= "IPHONE 13 PRO";
 	String CVV = "123";
 	String CardHolder = "Bryan Adams";
 	String Country = "India";
 	String ConfirmationMessage = "Thankyou for the order.";
 
-	
-	@Test
-	public void SubmitOrder() throws InterruptedException, IOException {
-
-		
-		Products productCatlogue = loginPage.Login("Deshmukh@yopmail.com", "Deshmukh@123");
+	//(dataProvider = "getData",groups = "purchase")
+	//String Email,String Password, String Productname
+	@Test(dataProvider = "getData",groups = {"purchase"})
+	public void SubmitOrder(String Email,String Password, String Productname) throws InterruptedException, IOException {		
+		Products productCatlogue = loginPage.Login(Email,Password);
 		productCatlogue.addToCart(Productname);
 		CartPage cartPage = productCatlogue.VerifyCartPage();
 		boolean Match = cartPage.ProductVerificationCheck(Productname);
@@ -35,14 +35,20 @@ public class MainClass extends BaseTest {
 		ConfirmationPage CNFRMPage = shipping.SubmitOrder();
 		boolean TxtConfirm = CNFRMPage.ConfirmOrder(ConfirmationMessage);
 		Assert.assertTrue(TxtConfirm);	
-//		Thread.sleep(15000);
+//		tearDown();
 	}
 
 	@Test(dependsOnMethods = "SubmitOrder" )
 	public void checkOrder() {
 		OrderPage orderPage = loginPage.GoToOrderPage();
-		 boolean Match = orderPage.OrderDisplay(Productname);
+		 boolean Match = orderPage.OrderDisplay(ProductName);
 		 Assert.assertTrue(Match);	
+		
+	}
+	
+	@DataProvider
+	public Object[][] getData() {
+		return new Object[][] {{"Deshmukh@yopmail.com", "Deshmukh@123","BANARSI SAREE"},{"Shivam@yopmail.com","Shivam@123","IPHONE 13 PRO"}};
 		
 	}
 }

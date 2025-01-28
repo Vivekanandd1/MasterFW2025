@@ -36,7 +36,7 @@ public class Products extends AbstractComponent{
 	
 	public WebElement GetProductByName(String Productname) {
 		WebElement MyProduct = getProductlist().stream()
-				.filter(Product -> Product.findElement(By.cssSelector("b")).getText().equals(Productname)).findFirst()
+				.filter(Product -> Product.findElement(By.cssSelector("h5 b")).getText().equals(Productname)).findFirst()
 				.orElseGet(null);
 		return MyProduct;
 	}

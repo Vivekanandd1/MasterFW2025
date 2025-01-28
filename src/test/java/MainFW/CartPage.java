@@ -42,11 +42,12 @@ public class CartPage extends AbstractComponent{
 	
 	public Shipping checkOut() {
 		ElementToDisappear(Alert);
+		ScreenScroll("window.scrollBy(0,600)");
 		MovetoElements(CheckoutBtn);
 		ElementToClick(CheckoutBtn);
 		CheckoutBtn.click();
-		Shipping shipping = new Shipping(driver);
-		return shipping;
+		return new Shipping(driver);
+		
 	}
 	
 	
