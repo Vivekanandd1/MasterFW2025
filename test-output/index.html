@@ -50,12 +50,12 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\Admin\eclipse-workspace\MasterFW2025\ErrorValidations.xml</span>
+                    <span>C:\Users\Admin\eclipse-workspace\MasterFW2025\Purchase.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,7 +103,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="MainFW.ErrorValidation" class="method navigator-link" hash-for-method="LoginErrorCheck">LoginErrorCheck</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="MainFW.MainClass" class="method navigator-link" hash-for-method="SubmitOrder(Deshmukh@yopmail.com, Deshmukh@123, BANARSI SAREE)">SubmitOrder(Deshmukh@yopmail.com, Deshmukh@123, BANARSI SAREE)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="MainFW.MainClass" class="method navigator-link" hash-for-method="SubmitOrder(Shivam@yopmail.com, Shivam@123, IPHONE 13 PRO)">SubmitOrder(Shivam@yopmail.com, Shivam@123, IPHONE 13 PRO)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -121,14 +126,23 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">MainFW.ErrorValidation</span>
+              <span class="class-name">MainFW.MainClass</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginErrorCheck">
-                  </a> <!-- LoginErrorCheck -->
-                  <span class="method-name">LoginErrorCheck</span>
+                  <a name="SubmitOrder(Deshmukh@yopmail.com, Deshmukh@123, BANARSI SAREE)">
+                  </a> <!-- SubmitOrder(Deshmukh@yopmail.com, Deshmukh@123, BANARSI SAREE) -->
+                  <span class="method-name">SubmitOrder</span>
+                  <span class="parameters">(Deshmukh@yopmail.com,Deshmukh@123,BANARSI SAREE)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SubmitOrder(Shivam@yopmail.com, Shivam@123, IPHONE 13 PRO)">
+                  </a> <!-- SubmitOrder(Shivam@yopmail.com, Shivam@123, IPHONE 13 PRO) -->
+                  <span class="method-name">SubmitOrder</span>
+                  <span class="parameters">(Shivam@yopmail.com,Shivam@123,IPHONE 13 PRO)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -136,33 +150,28 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Admin\eclipse-workspace\MasterFW2025\ErrorValidations.xml</span>
+            <span class="header-content">C:\Users\Admin\eclipse-workspace\MasterFW2025\Purchase.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+&lt;suite parallel=&quot;tests&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;groups&gt;
     &lt;run&gt;
-      &lt;include name=&quot;ErroHandling&quot;/&gt;
+      &lt;include name=&quot;purchase&quot;/&gt;
     &lt;/run&gt;
   &lt;/groups&gt;
   &lt;groups&gt;
     &lt;run&gt;
-      &lt;include name=&quot;ErroHandling&quot;/&gt;
+      &lt;include name=&quot;purchase&quot;/&gt;
     &lt;/run&gt;
   &lt;/groups&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;SubmitOrder&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;SubmitOrder&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;MainFW.MainClass&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- SubmitOrder --&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;ErrorValidation&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;MainFW.ErrorValidation&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- ErrorValidation --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -176,9 +185,6 @@
               <li>
                 <span class="test-name">SubmitOrder (1 class)</span>
               </li>
-              <li>
-                <span class="test-name">ErrorValidation (1 class)</span>
-              </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
@@ -188,10 +194,10 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">ErroHandling</span>
+              <span class="test-group-name">purchase</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">LoginErrorCheck</span>
+                <span class="method-in-group-name">SubmitOrder</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -211,16 +217,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'LoginErrorCheck')
-data.setCell(0, 2, 'MainFW.ErrorValidation')
-data.setCell(0, 3, 2306);
+data.setCell(0, 1, 'SubmitOrder')
+data.setCell(0, 2, 'MainFW.MainClass')
+data.setCell(0, 3, 15651);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'SubmitOrder')
+data.setCell(1, 2, 'MainFW.MainClass')
+data.setCell(1, 3, 15400);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -235,22 +245,13 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">3 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">MainFW.MainClass</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">checkOrder</span>
-                <br/>
-                <span class="ignored-method-name">SubmitOrder</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">MainFW.ErrorValidation</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">ProductValidation</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -263,29 +264,30 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">MainFW.MainClass</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
+              <div class="configuration-method before">
                 <span class="method-name">LaunchApp</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
-              <div class="configuration-test after">
-                <span class="method-name">TearDown</span>
-                <span class="method-start">34974 ms</span>
-              </div> <!-- configuration-test after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">MainFW.ErrorValidation</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">LaunchApp</span>
-                <span class="method-start">35381 ms</span>
-              </div> <!-- configuration-test before -->
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">LoginErrorCheck</span>
-                <span class="method-start">43084 ms</span>
+                <span class="method-name">SubmitOrder(Deshmukh@yopmail.com, Deshmukh@123, BANARSI SAREE)</span>
+                <span class="method-start">29436 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">TearDown</span>
-                <span class="method-start">45400 ms</span>
-              </div> <!-- configuration-test after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">45089 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">LaunchApp</span>
+                <span class="method-start">45202 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">SubmitOrder(Shivam@yopmail.com, Shivam@123, IPHONE 13 PRO)</span>
+                <span class="method-start">48516 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">63917 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
