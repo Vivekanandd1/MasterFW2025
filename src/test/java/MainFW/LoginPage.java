@@ -30,9 +30,9 @@ public class LoginPage extends AbstractComponent {
 	
 	public Products Login(String Email,String Password) {
 		WebElementToAppear(EmailEle);
-		EmailEle.clear();
+//		EmailEle.clear();
 		EmailEle.sendKeys(Email);
-		PasswordEle.clear();
+//		PasswordEle.clear();
 		PasswordEle.sendKeys(Password);
 		LoginBtn.click();
 		Products productCatlogue = new Products(driver);

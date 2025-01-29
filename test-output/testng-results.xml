@@ -2,69 +2,49 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-28T15:29:09 IST" name="Suite" finished-at="2025-01-28T15:30:13 IST" duration-ms="64084">
+  <suite started-at="2025-01-29T08:35:12 IST" name="Suite" finished-at="2025-01-29T08:35:51 IST" duration-ms="39048">
     <groups>
       <group name="purchase">
-        <method signature="MainClass.SubmitOrder(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:MainFW.MainClass@3857f613]" name="SubmitOrder" class="MainFW.MainClass"/>
+        <method signature="MainClass.SubmitOrder(java.util.HashMap)[pri:0, instance:MainFW.MainClass@3857f613]" name="SubmitOrder" class="MainFW.MainClass"/>
       </group> <!-- purchase -->
     </groups>
-    <test started-at="2025-01-28T15:29:09 IST" name="SubmitOrder" finished-at="2025-01-28T15:30:13 IST" duration-ms="64084">
+    <test started-at="2025-01-29T08:35:12 IST" name="SubmitOrder" finished-at="2025-01-29T08:35:51 IST" duration-ms="39048">
       <class name="MainFW.MainClass">
-        <test-method is-config="true" signature="LaunchApp()[pri:0, instance:MainFW.MainClass@3857f613]" started-at="2025-01-28T15:29:09 IST" name="LaunchApp" finished-at="2025-01-28T15:29:38 IST" duration-ms="29435" status="PASS">
+        <test-method is-config="true" signature="LaunchApp()[pri:0, instance:MainFW.MainClass@3857f613]" started-at="2025-01-29T08:35:12 IST" name="LaunchApp" finished-at="2025-01-29T08:35:19 IST" duration-ms="6528" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApp -->
-        <test-method signature="SubmitOrder(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:MainFW.MainClass@3857f613]" started-at="2025-01-28T15:29:38 IST" name="SubmitOrder" data-provider="getData" finished-at="2025-01-28T15:29:54 IST" duration-ms="15651" status="PASS">
+        <test-method signature="SubmitOrder(java.util.HashMap)[pri:0, instance:MainFW.MainClass@3857f613]" started-at="2025-01-29T08:35:19 IST" name="SubmitOrder" data-provider="getData" finished-at="2025-01-29T08:35:27 IST" duration-ms="7810" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Deshmukh@yopmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Deshmukh@123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BANARSI SAREE]]>
+                <![CDATA[{Product=BANARSI SAREE, Email=Deshmukh@yopmail.com, Password=Deshmukh@123}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SubmitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:MainFW.MainClass@3857f613]" started-at="2025-01-28T15:29:54 IST" name="tearDown" finished-at="2025-01-28T15:29:54 IST" duration-ms="111" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:MainFW.MainClass@3857f613]" started-at="2025-01-29T08:35:27 IST" name="tearDown" finished-at="2025-01-29T08:35:27 IST" duration-ms="334" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="LaunchApp()[pri:0, instance:MainFW.MainClass@3857f613]" started-at="2025-01-28T15:29:54 IST" name="LaunchApp" finished-at="2025-01-28T15:29:58 IST" duration-ms="3314" status="PASS">
+        <test-method is-config="true" signature="LaunchApp()[pri:0, instance:MainFW.MainClass@3857f613]" started-at="2025-01-29T08:35:27 IST" name="LaunchApp" finished-at="2025-01-29T08:35:32 IST" duration-ms="5061" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApp -->
-        <test-method signature="SubmitOrder(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:MainFW.MainClass@3857f613]" started-at="2025-01-28T15:29:58 IST" name="SubmitOrder" data-provider="getData" finished-at="2025-01-28T15:30:13 IST" duration-ms="15400" status="PASS">
+        <test-method signature="SubmitOrder(java.util.HashMap)[pri:0, instance:MainFW.MainClass@3857f613]" started-at="2025-01-29T08:35:32 IST" name="SubmitOrder" data-provider="getData" finished-at="2025-01-29T08:35:51 IST" duration-ms="18904" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Shivam@yopmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Shivam@123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[IPHONE 13 PRO]]>
+                <![CDATA[{Product=IPHONE 13 PRO, Email=Shivam@yopmail.com, Password=Shivam@123}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SubmitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:MainFW.MainClass@3857f613]" started-at="2025-01-28T15:30:13 IST" name="tearDown" finished-at="2025-01-28T15:30:13 IST" duration-ms="123" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:MainFW.MainClass@3857f613]" started-at="2025-01-29T08:35:51 IST" name="tearDown" finished-at="2025-01-29T08:35:51 IST" duration-ms="279" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
