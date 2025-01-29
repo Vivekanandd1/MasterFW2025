@@ -6,6 +6,7 @@ import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -49,17 +50,18 @@ public class MainClass extends BaseTest {
 	}
 	
 	@DataProvider
-	public Object[][] getData() {
-		HashMap<String,String> map = new HashMap<String,String>();
-		map.put("Email", "Deshmukh@yopmail.com");
-		map.put("Password", "Deshmukh@123");
-		map.put("Product", "BANARSI SAREE");
-		
-		HashMap<String,String> map1 = new HashMap<String,String>();
-		map1.put("Email", "Shivam@yopmail.com");
-		map1.put("Password", "Shivam@123");
-		map1.put("Product", "IPHONE 13 PRO");
-		return new Object[][]{{map},{map1}}  ;
+	public Object[][] getData() throws IOException {
+//		HashMap<String,String> map = new HashMap<String,String>();
+//		map.put("Email", "Deshmukh@yopmail.com");
+//		map.put("Password", "Deshmukh@123");
+//		map.put("Product", "BANARSI SAREE");
+//		
+//		HashMap<String,String> map1 = new HashMap<String,String>();
+//		map1.put("Email", "Shivam@yopmail.com");
+//		map1.put("Password", "Shivam@123");
+//		map1.put("Product", "IPHONE 13 PRO");
+		List<HashMap<String,String>> data = getJsonDataToMap(System.getProperty("user.dir")+"\\src\\test\\java\\Data\\PurchaseOrder.json");
+		return new Object[][]{{data.get(0)},{data.get(1)}}  ;
 		
 //		return new Object[][] {{"Deshmukh@yopmail.com", "Deshmukh@123","BANARSI SAREE"},{"Shivam@yopmail.com","Shivam@123","IPHONE 13 PRO"}};
 		
