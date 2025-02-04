@@ -4,21 +4,17 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
 import java.io.IOException;
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import AbstractComponents.BaseTest;
 import AbstractComponents.OrderPage;
+import TestComponent.iRetryAnalyzer;
+
 
 public class MainClass extends BaseTest {
 	
-	String ProductName= "IPHONE 13 PRO";
+	String ProductsName= "BANARSI SAREE";
 	String CVV = "123";
 	String CardHolder = "Bryan Adams";
 	String Country = "India";
@@ -41,12 +37,13 @@ public class MainClass extends BaseTest {
 //		tearDown();
 	}
 
-	@Test(dependsOnMethods = "SubmitOrder" )
+	@Test(dependsOnMethods = "SubmitOrder",retryAnalyzer=iRetryAnalyzer.class ) 
 	public void checkOrder() {
-		OrderPage orderPage = loginPage.GoToOrderPage();
-		 boolean Match = orderPage.OrderDisplay(ProductName);
-		 Assert.assertTrue(Match);	
-		
+
+		Products productCatlogue = loginPage.Login("Deshmukh@yopmail.com", "Deshmukh@123");
+		OrderPage ordersPage = productCatlogue.GoToOrderPage();
+		Assert.assertTrue(ordersPage.OrderDisplay(ProductsName));
+	
 	}
 	
 	@DataProvider
