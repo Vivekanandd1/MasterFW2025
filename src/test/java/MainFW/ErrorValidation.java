@@ -3,6 +3,7 @@ package MainFW;
 import org.testng.annotations.Test;
 
 import AbstractComponents.BaseTest;
+import TestComponent.iRetryAnalyzer;
 
 import org.testng.Assert;
 import java.io.IOException;
@@ -11,11 +12,11 @@ import java.io.IOException;
 public class ErrorValidation extends BaseTest{
 
 	
-	@Test(groups = "ErroHandling")
+	@Test(groups = "ErroHandling",retryAnalyzer = iRetryAnalyzer.class)
 	public void LoginErrorCheck() {
 		
 		loginPage.Login("Deshmukh@yopmail.com", "Deshmukh@133");
-		Assert.assertEquals("Incorrect email or password.", loginPage.getErrorMsg());
+		Assert.assertEquals("Incorrect email  password.", loginPage.getErrorMsg());
 	
 	}
 	
