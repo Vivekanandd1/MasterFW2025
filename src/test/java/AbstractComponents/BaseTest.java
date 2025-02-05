@@ -35,7 +35,7 @@ public class BaseTest {
 		Properties props = new Properties();
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\Resource.properties");
 		props.load(fis);
-		String Browser = props.getProperty("BrowserName");
+		String Browser = System.getProperty("browser")!=null ? System.getProperty("browser") :props.getProperty("browser");
 		
 		if(Browser.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
