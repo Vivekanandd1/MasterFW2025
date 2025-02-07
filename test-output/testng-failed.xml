@@ -4,15 +4,28 @@
   <listeners>
     <listener class-name="TestComponent.Listeners"/>
   </listeners>
-  <test thread-count="5" parallel="tests" name="ErrorValidation(failed)">
+  <test thread-count="5" parallel="tests" name="ErrorValidationTest(failed)">
     <classes>
       <class name="MainFW.ErrorValidation">
         <methods>
           <include name="LaunchApp"/>
+          <include name="ProductValidation"/>
           <include name="LoginErrorCheck"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- MainFW.ErrorValidation -->
     </classes>
-  </test> <!-- ErrorValidation(failed) -->
+  </test> <!-- ErrorValidationTest(failed) -->
+  <test thread-count="5" parallel="tests" name="SubmitOrderTest(failed)">
+    <classes>
+      <class name="MainFW.MainClass">
+        <methods>
+          <include name="SubmitOrder"/>
+          <include name="checkOrder"/>
+          <include name="LaunchApp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- MainFW.MainClass -->
+    </classes>
+  </test> <!-- SubmitOrderTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->
