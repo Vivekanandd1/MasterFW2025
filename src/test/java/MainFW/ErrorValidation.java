@@ -16,7 +16,7 @@ public class ErrorValidation extends BaseTest{
 	public void LoginErrorCheck() {
 		
 		loginPage.Login("Deshmukh@yopmail.com", "Deshmukh@133");
-		Assert.assertEquals("Incorrect email  password.", loginPage.getErrorMsg());
+		Assert.assertEquals("Incorrect email or password.", loginPage.getErrorMsg());
 	
 	}
 	
