@@ -6,7 +6,6 @@
 	<artifactId>Assignment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-
 	<properties>
 
 		<cucumber.version>6.6.1</cucumber.version>
