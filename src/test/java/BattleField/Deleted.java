@@ -28,10 +28,10 @@ public class Deleted {
             if (itemsNeededList.contains(formattedName)) {
                 System.out.println(formattedName);
                 j++;
-                var xpathFormat = "//h4[contains(text(),'%s')" +
-                        "]/following-sibling::div[@class='product-action']/button";
-                var elementToBeClicked = driver.findElement(By.xpath(String.format(xpathFormat, formattedName)));
-                elementToBeClicked.click();
+//                var xpathFormat = "//h4[contains(text(),'%s')" +
+//                        "]/following-sibling::div[@class='product-action']/button";
+//                var elementToBeClicked = driver.findElement(By.xpath(String.format(xpathFormat, formattedName)));
+//                elementToBeClicked.click();
                 if (j == 2) {
                     break;
                 }
