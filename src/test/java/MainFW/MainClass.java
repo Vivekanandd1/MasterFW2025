@@ -14,7 +14,7 @@ import TestComponent.iRetryAnalyzer;
 
 public class MainClass extends BaseTest {
 	
-	String ProductsName= "BANARSI SAREE";
+	String ProductsName= "ADIDAS ORIGINAL";
 	String CVV = "123";
 	String CardHolder = "Bryan Adams";
 	String Country = "India";
