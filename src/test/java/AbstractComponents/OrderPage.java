@@ -26,7 +26,4 @@ WebDriver driver;
 		return Check;
 	}
 
-	
-	
-	
 }
