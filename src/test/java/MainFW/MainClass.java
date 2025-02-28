@@ -1,16 +1,14 @@
 package MainFW;
-
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import org.testng.Assert;
+import org.testng.AssertJUnit;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 import AbstractComponents.BaseTest;
 import AbstractComponents.OrderPage;
 import TestComponent.iRetryAnalyzer;
-
 
 public class MainClass extends BaseTest {
 	
@@ -31,7 +29,7 @@ public class MainClass extends BaseTest {
 		shipping.ProductVerification(CVV, CardHolder, Country);
 		ConfirmationPage CNFRMPage = shipping.SubmitOrder();
 		boolean TxtConfirm = CNFRMPage.ConfirmOrder(ConfirmationMessage);
-		Assert.assertTrue(TxtConfirm);	
+		Assert.assertTrue(TxtConfirm);
 	}
 
 	@Test(dependsOnMethods = "SubmitOrder",retryAnalyzer=iRetryAnalyzer.class ) 
