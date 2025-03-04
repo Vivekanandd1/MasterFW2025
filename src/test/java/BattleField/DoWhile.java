@@ -10,6 +10,8 @@ public class DoWhile {
 			
 		} while (i<10);
 		System.out.println(i<10);
+		/*The statement System.out.println(i < 10); prints false because after exiting 
+		the loop, i == 10, making i < 10 false.*/
 		System.out.println("Incremented "+ i);
 	}
 
