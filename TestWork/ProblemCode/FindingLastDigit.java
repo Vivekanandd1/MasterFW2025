@@ -9,5 +9,6 @@ public class FindingLastDigit {
      // Print the last digit
      int Lastdigit = Math.abs(n%10);
      System.out.println(Lastdigit);
+     /*code*/
 }
 }
