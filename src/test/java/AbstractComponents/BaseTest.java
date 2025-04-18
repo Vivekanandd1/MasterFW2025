@@ -4,10 +4,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.DirectoryNotEmptyException;
 import java.time.Duration;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
@@ -17,13 +18,10 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.chromium.ChromiumOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -42,11 +40,17 @@ public class BaseTest {
 		String Browser = System.getProperty("browser")!=null ? System.getProperty("browser") :props.getProperty("browser");
 		
 		if(Browser.contains("chrome")) {
-			ChromeOptions options = new ChromeOptions();
+	        ChromeOptions options = new ChromeOptions();
 			if (Browser.contains("headless")) {
 				options.addArguments("headless");
-				
 			}
+			/*adding the password manager disable code*/
+            options.addArguments("guest");
+//            options.setExperimentalOption("useAutomationExtension", false);
+            /*Prevents Chrome from adding the --enable-automation flag.*/
+            /*By excluding this switch, you make the browser appear more "normal.*/
+            options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+
 			driver = new ChromeDriver(options);
 			driver.manage().window().setSize(new Dimension(1400,900));
 			

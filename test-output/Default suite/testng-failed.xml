@@ -5,8 +5,7 @@
     <classes>
       <class name="MainFW.MainClass">
         <methods>
-          <include name="SubmitOrder" invocation-numbers="0 1"/>
-          <include name="checkOrder"/>
+          <include name="SubmitOrder" invocation-numbers="0"/>
           <include name="LaunchApp"/>
           <include name="tearDown"/>
         </methods>

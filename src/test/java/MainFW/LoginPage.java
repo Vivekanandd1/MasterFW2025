@@ -1,5 +1,6 @@
 package MainFW;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,9 +31,7 @@ public class LoginPage extends AbstractComponent {
 	
 	public Products Login(String Email,String Password) {
 		WebElementToAppear(EmailEle);
-//		EmailEle.clear();
 		EmailEle.sendKeys(Email);
-//		PasswordEle.clear();
 		PasswordEle.sendKeys(Password);
 		LoginBtn.click();
 		Products productCatlogue = new Products(driver);
