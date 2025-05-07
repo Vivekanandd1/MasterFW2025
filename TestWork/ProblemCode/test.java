@@ -4,29 +4,24 @@ import java.util.Arrays;
 
 public class test {
 	
-	 public static boolean areAnagrams(String s1, String s2) {
-	       char[] c1 = s1.toCharArray();
-	       char[] c2 = s2.toCharArray();
-	       
-	       Arrays.sort(c1);
-	       Arrays.sort(c2);
-	        // Your code here
+	public static int minimumVerticalSum(ArrayList<ArrayList<Integer>> arr) {
+	    // Your code here
+	    int ans = Integer.MAX_VALUE;
+	    for(int i=0; i<1001;i++){
+	        int sum=0;
+	        for(int j=0;j<n;j++){
+	            if(arr.get(j).size()>i){
+	            sum = sum+arr.get(i).get(j);
+	            }
+	        }
 	        
-	      s1 = new String(c1) ;
-	      s2 = new String(c2) ;
-		return s1.equalsIgnoreCase(s2);
-	      
+	        if(sum>0){
+	            ans = Math.min(ans,sum);
+	        }
+	    }
 	    
-	      
-	}
- 
-	 
-	 public static void main(String[] args) {
-		 test t  = new test();
-		 t.areAnagrams("abcd", "dbcde");
-				 
-	}
-	
-	
+	    return ans;
+	}	
+
 }
 
