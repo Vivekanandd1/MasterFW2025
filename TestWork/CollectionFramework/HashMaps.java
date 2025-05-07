@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import java.util.function.BiConsumer;
 
 public class HashMaps
 {
@@ -14,8 +13,8 @@ public class HashMaps
 		hm.put(400, "Dominar");
 		hm.put(900, "Z900");
 		hm.put(1250, "GSBMW");
-		Set sn = hm.entrySet();
-		Iterator it = sn.iterator();
+		Set<?> sn = hm.entrySet();
+		Iterator<?> it = sn.iterator();
 		while(it.hasNext()) {
 //			System.out.println(it.next());
 			Map.Entry mp = (Map.Entry)it.next();
