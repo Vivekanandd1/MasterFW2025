@@ -13,12 +13,18 @@ Monitoring and Reporting: Integrations with tools like Prometheus, Grafana, or E
 
 **📂 Repository Structure**
 
-📁 automation-ci-cd/  
-├── 📁 pipelines/  
-│   ├── github-actions/       # GitHub Actions workflows  
-│   ├── jenkins/              # Jenkins pipeline configurations  
-│   ├── gitlab-ci/            # GitLab CI configurations  
-│   └── circleci/             # CircleCI configurations  
+📁 MasterFW2025/  
+├── pom.xml
+├── testng.xml
+├── src/
+│   ├── test/
+│   │   └── java/
+│   │       └── 📁 AbstractComponents/
+│   │           └── AbstractComponent.java
+│   │           └── BaseTest.java
+│   │           └── OrderPage.java
+
+/Below structure pending to be updated/
 ├── 📁 infrastructure/  
 │   ├── terraform/            # Terraform scripts for IaC  
 │   ├── ansible/              # Ansible playbooks  
