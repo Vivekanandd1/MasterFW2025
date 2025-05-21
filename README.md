@@ -15,7 +15,7 @@ Monitoring and Reporting: Integrations with tools like Prometheus, Grafana, or E
 
 📁 MasterFW2025/
 
-<pre> \`\`\`
+<pre>
 ├── pom.xml
 ├── testng.xml
 ├── src/
