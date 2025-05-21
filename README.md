@@ -15,11 +15,17 @@ Monitoring and Reporting: Integrations with tools like Prometheus, Grafana, or E
 
 📁 MasterFW2025/
 
-├── 📁 infrastructure/  
-│   ├── src/
-│		│			└── test/
-│   ├── ansible/              # Ansible playbooks  
-│   └── cloudformation/       # AWS CloudFormation template
+<pre> \`\`\`
+├── pom.xml
+├── testng.xml
+├── src/
+│   ├── test/
+│   │   └── java/
+│   │       └── 📁 AbstractComponents/
+│   │           └── AbstractComponent.java
+│   │           └── BaseTest.java
+│   │           └── OrderPage.java
+</pre>
    
 
 
