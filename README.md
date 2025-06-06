@@ -25,6 +25,22 @@ Monitoring and Reporting: Integrations with tools like Prometheus, Grafana, or E
 │   │           └── AbstractComponent.java
 │   │           └── BaseTest.java
 │   │           └── OrderPage.java
+│   │       └── 📁 Cucumber/
+│   │           └── TestNGTestRunner.java
+│   │           └── ErrorValidation.feature
+│   │           └── SubmitOrder.feature   
+│   │       └── 📁 Data/
+│   │           └── DataReader.java
+│   │           └── PurchaseOrder.json  
+│   │       └── 📁 MainFW/
+│   │           └── CartPage.java
+│   │           └── ConfirmationPage.java     
+│   │           └── ErrorValidation.java
+│   │           └── LoginPage.java     
+│   │           └── MainClass.java
+│   │           └── MainClass2nd.java     #A stand alone test class which was later fiburcated into Page Object Model
+│   │           └── Products.java
+│   │           └── Shipping.java        
 </pre>
    
 
