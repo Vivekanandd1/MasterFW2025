@@ -25,19 +25,28 @@ public class SecondLargestNumber {
      int first =Integer.MIN_VALUE, second=Integer.MIN_VALUE;
      
     for(int num: arr) {
-    	 if(num>first) {
+    	 if(num>first) 
+    	/*Description: Checks if element in array is greater than the value of First variable*/	 
+    	 {
     		 second = first;
+    		 /*Description: Assigns Variable First's value to Second Variable*/	 
     		 first = num;
+    		 /*Description: Assigns the value of Num to first*/	 
     	 }
-    	 else if(num>second && num!=first) {
+    	 else if(num>second && num!=first)
+    		 /*Description: Checks if element in array is greater than the Value of Variable second's value and not equal to value
+    		  * Variable First's*/	 
+    	 {
     		 second = num;
+    		 /*Description: Assigns the value of Num to second*/	 
     	 }
    
     	 
      };
      
      return (second ==Integer.MIN_VALUE)?-1:second;
-     
+     /*Description: (Turnery Expression) where it checks if variable second's value not changed than it will return -1
+      * actual value of Variable second*/	 
 		
 	}
 
