@@ -1,27 +1,19 @@
 package ProblemCode;
 
-import java.util.Arrays;
+import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Date;
 
-public class test {
-	
-	public static int minimumVerticalSum(ArrayList<ArrayList<Integer>> arr) {
-	    // Your code here
-	    int ans = Integer.MAX_VALUE;
-	    for(int i=0; i<1001;i++){
-	        int sum=0;
-	        for(int j=0;j<n;j++){
-	            if(arr.get(j).size()>i){
-	            sum = sum+arr.get(i).get(j);
-	            }
-	        }
-	        
-	        if(sum>0){
-	            ans = Math.min(ans,sum);
-	        }
-	    }
-	    
-	    return ans;
-	}	
+public class testers {
+	// User function Template for Java
 
+	public static void main(String[] args) {
+//		LocalDate date = LocalDate.now();
+		LocalTime time = LocalTime.now();
+		System.out.println(LocalDateTime.now());
+
+	}
 }
 
