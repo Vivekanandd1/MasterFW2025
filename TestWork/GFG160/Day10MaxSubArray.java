@@ -13,7 +13,9 @@ public class Day10MaxSubArray {
 		int res = arr[0];
 		int maxend =  arr[0];
 		for(int i=1;i<arr.length;i++) {
+			/*will store the max value of index*/
 			maxend = Math.max(maxend+arr[i], arr[i]);
+			/*will find out the max among maxend and the res*/
 			res = Math.max(res, maxend);
 		}
 		return res;
