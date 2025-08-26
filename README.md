@@ -40,7 +40,15 @@ Monitoring and Reporting: Integrations with tools like Prometheus, Grafana, or E
 │   │           └── MainClass.java
 │   │           └── MainClass2nd.java     #A stand alone test class which was later fiburcated into Page Object Model
 │   │           └── Products.java
-│   │           └── Shipping.java        
+│   │           └── Shipping.java 
+│   │       └── 📁 Resources/
+│   │           └── DataBaseConnector.java
+│   │           └── ExtentReportNG.java 
+│   │       └── 📁 StepDefination/
+│   │           └── StepDefinations.java
+│   │       └── 📁 TestComponent/
+│   │           └── Listeners.java
+│   │           └── iRetryAnalyzer.java
 </pre>
    
 
