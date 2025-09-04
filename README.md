@@ -37,7 +37,7 @@ Monitoring and Reporting: Integrations with tools like Prometheus, Grafana, or E
 │   │           └── ConfirmationPage.java     
 │   │           └── ErrorValidation.java
 │   │           └── LoginPage.java     
-│   │           └── MainClass.java
+│   │           └── MainClass.java        #A Complete TC file to run
 │   │           └── MainClass2nd.java     #A stand alone test class which was later fiburcated into Page Object Model
 │   │           └── Products.java
 │   │           └── Shipping.java 
