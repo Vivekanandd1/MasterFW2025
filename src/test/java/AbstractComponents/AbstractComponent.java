@@ -47,6 +47,11 @@ public class AbstractComponent {
 		js.executeScript(Command);
 	}
 	
+	public void JSClick(String Command, WebElement ele ) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript(Command,ele);
+	}
+	
 	public void MovetoElement(WebElement Ele, String country) {
 		Actions Act = new Actions(driver);
 		Act.sendKeys(Ele, country).build().perform();
