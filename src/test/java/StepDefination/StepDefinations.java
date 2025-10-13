@@ -1,10 +1,8 @@
 package StepDefination;
 
 import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.AssertJUnit;
-
 import AbstractComponents.BaseTest;
 import MainFW.CartPage;
 import MainFW.ConfirmationPage;
@@ -12,8 +10,8 @@ import MainFW.LoginPage;
 import MainFW.Products;
 import MainFW.Shipping;
 import io.cucumber.java.en.Given;
-//_
 import io.cucumber.java.en.Then;
+
 public class StepDefinations extends BaseTest {
 	
 	String CVV = "123";

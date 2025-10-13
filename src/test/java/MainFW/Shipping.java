@@ -49,7 +49,11 @@ public class Shipping extends AbstractComponent{
 	public ConfirmationPage SubmitOrder() {
 		ElementToAppear(Submit);
 		ElementToClick(SubmitBtn);
-		SubmitBtn.click();
+		try{JSClick("arguments[0].click", SubmitBtn);}
+		finally {
+			SubmitBtn.click();
+		}
+		
 		ConfirmationPage CNFRMPage = new ConfirmationPage(driver);
 		return CNFRMPage;
 	}

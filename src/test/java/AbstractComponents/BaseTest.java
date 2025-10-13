@@ -41,12 +41,11 @@ public class BaseTest {
 				options.addArguments("headless");
 			}
 			/*adding the password manager disable code*/
-            options.addArguments("guest");
+            options.addArguments("--incognito");
 //            options.setExperimentalOption("useAutomationExtension", false);
             /*Prevents Chrome from adding the --enable-automation flag.*/
             /*By excluding this switch, you make the browser appear more "normal.*/
             options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-
 			driver = new ChromeDriver(options);
 			driver.manage().window().setSize(new Dimension(1400,900));
 			

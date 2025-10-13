@@ -1,9 +1,7 @@
 package MainFW;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -40,11 +38,14 @@ public class CartPage extends AbstractComponent{
 	}
 	
 	public Shipping checkOut() {
-		ElementToDisappear(Alert);
+		//ElementToDisappear(Alert);
+		
 		ScreenScroll("window.scrollBy(0,600)");
-		MovetoElements(CheckoutBtn);
 		ElementToClick(CheckoutBtn);
-		CheckoutBtn.click();
+		try{JSClick("arguments[0].click", CheckoutBtn);}
+		finally {
+			CheckoutBtn.click();
+		}
 		return new Shipping(driver);
 		
 	}

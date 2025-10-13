@@ -1,13 +1,12 @@
-		package MainFW;
+package MainFW;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-
+import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.AssertJUnit;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import AbstractComponents.BaseTest;
 import AbstractComponents.OrderPage;
 import TestComponent.iRetryAnalyzer;
@@ -26,11 +25,12 @@ public class MainClass extends BaseTest {
 		productCatlogue.addToCart(input.get("Product"));
 		CartPage cartPage = productCatlogue.VerifyCartPage();
 		boolean Match = cartPage.ProductVerificationCheck(input.get("Product"));
-		AssertJUnit.assertTrue(Match);
+		Assert.assertTrue(Match);
 		Shipping shipping =cartPage.checkOut();
 		shipping.ProductVerification(CVV, CardHolder, Country);
 		ConfirmationPage CNFRMPage = shipping.SubmitOrder();
 		boolean TxtConfirm = CNFRMPage.ConfirmOrder(ConfirmationMessage);
+		System.out.println("Order id is: " + driver.findElement(By.xpath("//tr/td/label[@class='ng-star-inserted']")).getText());
 		Assert.assertTrue(TxtConfirm);
 	}
 

@@ -20,10 +20,15 @@ public class Products extends AbstractComponent{
 	@FindBy(css=".mb-3")
 	List<WebElement> Products;
 	
+	@FindBy(id="toast-container")
+	WebElement loginToast;
+	
 	By ProductList = By.cssSelector(".mb-3");
 	By ActualProduct = By.cssSelector("button.w-10");
 	By Spinner = By.cssSelector("#toast-container");
 	By CartBtn = By.xpath("//button[@routerlink='/dashboard/cart']");
+	By LoginToast = By.id("toast-container");
+	
 	
 	
 	public List<WebElement> getProductlist() {
@@ -40,17 +45,23 @@ public class Products extends AbstractComponent{
 	
 	public void addToCart(String Productname) {
 		WebElement AddToCartBtn = GetProductByName(Productname).findElement(ActualProduct);
+		ElementToDisappear(LoginToast);
 		ElementToClick(driver.findElement(ActualProduct));
 		AddToCartBtn.click();
 	}
 	
-	public CartPage VerifyCartPage() {
-		ElementToAppear(Spinner);
-		ElementToDisappear(Spinner);
-		ElementToAppear(CartBtn);
-		ElementToClick(driver.findElement(CartBtn));
-		driver.findElement(CartBtn).click();
-		CartPage cartPage = new CartPage(driver);
-		return cartPage;
+	public CartPage VerifyCartPage() {		
+	    // Wait for spinner to appear and disappear
+	    ElementToAppear(Spinner);
+//	    ElementToDisappear(Spinner);
+
+	    // Wait for Cart button and click it
+	    WebElement cartButton = driver.findElement(CartBtn);
+	    ElementToAppear(CartBtn);
+	    ElementToClick(cartButton);
+	    cartButton.click();
+
+	    // Return new CartPage instance
+	    return new CartPage(driver);
 	}
 }
