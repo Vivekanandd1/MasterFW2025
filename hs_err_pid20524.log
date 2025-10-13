@@ -1,0 +1,196 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 266338304 bytes for Failed to commit area from 0x0000000703000000 to 0x0000000712e00000 of length 266338304.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./open/src/hotspot/os/windows/os_windows.cpp:3293), pid=20524, tid=5060
+#
+# JRE version:  (11.0.20+9) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.0.20+9-LTS-256, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 org.testng.remote.RemoteTestNG -serport 62744 -protocol json -d C:\Users\Admin\eclipse-workspace\MasterFW2025\test-output C:\WINDOWS\TEMP\testng-eclipse-685544310\testng-customsuite.xml
+
+Host: Intel(R) Core(TM) i7-8665U CPU @ 1.90GHz, 8 cores, 15G,  Windows 11 , 64 bit Build 26100 (10.0.26100.5074)
+Time: Fri Sep 12 21:28:02 2025 India Standard Time elapsed time: 1.064464 seconds (0d 0h 0m 1s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000012c0a7ca000):  JavaThread "Unknown thread" [_thread_in_vm, id=5060, stack(0x0000000d1a700000,0x0000000d1a800000)]
+
+Stack: [0x0000000d1a700000,0x0000000d1a800000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6602ba]
+V  [jvm.dll+0x7a32af]
+V  [jvm.dll+0x7a4979]
+V  [jvm.dll+0x7a5013]
+V  [jvm.dll+0x258ef5]
+V  [jvm.dll+0x65d619]
+V  [jvm.dll+0x652375]
+V  [jvm.dll+0x31359d]
+V  [jvm.dll+0x313402]
+V  [jvm.dll+0x318036]
+V  [jvm.dll+0x360130]
+V  [jvm.dll+0x35fba2]
+V  [jvm.dll+0x2eec28]
+V  [jvm.dll+0x2efd35]
+V  [jvm.dll+0x77c327]
+V  [jvm.dll+0x77dc0f]
+V  [jvm.dll+0x36d3d9]
+V  [jvm.dll+0x760d0f]
+V  [jvm.dll+0x3df467]
+V  [jvm.dll+0x3e1511]
+C  [jli.dll+0x52e7]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x8d9c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x0000012c0a5cdcd0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x0000012c0a7e0000 GCTaskThread "GC Thread#0" [stack: 0x0000000d1a800000,0x0000000d1a900000] [id=20572]
+  0x0000012c0a83b800 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000000d1a900000,0x0000000d1aa00000] [id=2840]
+  0x0000012c0a83d800 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000000d1aa00000,0x0000000d1ab00000] [id=21492]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffae180f6e7]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000012c0a7c7810] Heap_lock - owner thread: 0x0000012c0a7ca000
+
+Heap address: 0x0000000703000000, size: 4048 MB, Compressed Oops mode: Non-zero based: 0x0000000703000000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff633170000 - 0x00007ff633180000 	C:\Program Files\Java\jdk-11\bin\javaw.exe
+0x00007ffb36bc0000 - 0x00007ffb36e29000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffb36950000 - 0x00007ffb36a19000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffb342f0000 - 0x00007ffb346e3000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffb33ed0000 - 0x00007ffb3401b000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffb25b10000 - 0x00007ffb25b29000 	C:\Program Files\Java\jdk-11\bin\jli.dll
+0x00007ffb356b0000 - 0x00007ffb35764000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffb361c0000 - 0x00007ffb36269000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffb35a90000 - 0x00007ffb35b36000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffb25f30000 - 0x00007ffb25f4b000 	C:\Program Files\Java\jdk-11\bin\VCRUNTIME140.dll
+0x00007ffb358a0000 - 0x00007ffb359b8000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffb36300000 - 0x00007ffb364c4000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffb342c0000 - 0x00007ffb342e7000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffb17b20000 - 0x00007ffb17db3000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.5074_none_3e0d6f78e32fd63f\COMCTL32.dll
+0x00007ffb35870000 - 0x00007ffb3589b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffb34190000 - 0x00007ffb342bd000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffb34780000 - 0x00007ffb34823000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffb287e0000 - 0x00007ffb287eb000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffb36180000 - 0x00007ffb361af000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffb25240000 - 0x00007ffb2524c000 	C:\Program Files\Java\jdk-11\bin\vcruntime140_1.dll
+0x00007ffb0f460000 - 0x00007ffb0f4ee000 	C:\Program Files\Java\jdk-11\bin\msvcp140.dll
+0x00007ffae1510000 - 0x00007ffae207d000 	C:\Program Files\Java\jdk-11\bin\server\jvm.dll
+0x00007ffb34990000 - 0x00007ffb34998000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffb1f170000 - 0x00007ffb1f1a5000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffb25000000 - 0x00007ffb2500a000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffb36500000 - 0x00007ffb36574000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffb32af0000 - 0x00007ffb32b0b000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffb25230000 - 0x00007ffb25240000 	C:\Program Files\Java\jdk-11\bin\verify.dll
+0x00007ffb31270000 - 0x00007ffb314b2000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffb36580000 - 0x00007ffb368fb000 	C:\WINDOWS\System32\combase.dll
+0x00007ffb35f50000 - 0x00007ffb36027000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffb139d0000 - 0x00007ffb13a0d000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffb34830000 - 0x00007ffb348c9000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffb25100000 - 0x00007ffb25128000 	C:\Program Files\Java\jdk-11\bin\java.dll
+0x00007ffb251b0000 - 0x00007ffb251ba000 	C:\Program Files\Java\jdk-11\bin\jimage.dll
+0x00007ffb250e0000 - 0x00007ffb250f7000 	C:\Program Files\Java\jdk-11\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-11\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.5074_none_3e0d6f78e32fd63f;C:\Program Files\Java\jdk-11\bin\server
+
+VM Arguments:
+jvm_args: -ea -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 
+java_command: org.testng.remote.RemoteTestNG -serport 62744 -protocol json -d C:\Users\Admin\eclipse-workspace\MasterFW2025\test-output C:\WINDOWS\TEMP\testng-eclipse-685544310\testng-customsuite.xml
+java_class_path (initial): C:\Users\Admin\eclipse\java-2025-06\eclipse\configuration\org.eclipse.osgi\525\0\.cp\lib\testng-remote.jar;C:\Users\Admin\eclipse-workspace\MasterFW2025\target\test-classes;C:\Users\Admin\eclipse-workspace\MasterFW2025\target\classes;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-java\4.33.0\selenium-java-4.33.0.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-api\4.33.0\selenium-api-4.33.0.jar;C:\Users\Admin\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.33.0\selenium-chrome-driver-4.33.0.jar;C:\Users\Admin\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.33.0\selenium-chromium-driver-4.33.0.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-json\4.33.0\selenium-json-4.33.0.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.33.0\selenium-manager-4.33.0.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v135\4.33.0\selenium-devtools-v135-4.33.0.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v136\4.33.0\selenium-devtools-v136-4.33.0.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v137\4.33.0\selenium-devtools-v137-4.33.0.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.33.0\selenium-edge-driver-4.33.0.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.33.0\selenium-firefox-driver-4.33.0.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-http\4.33.0\selenium-http-4.33.0.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.33.0\selenium-ie-driver-4.33.0.jar;C:\Users\Admin\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.33.0\selenium-remot
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266338304                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4244635648                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5836300                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122910970                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122910970                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:/Users/Admin/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916/jre/bin/server;C:/Users/Admin/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-21\bin;C:\Program Files\Azure Data Studio\bin;C:\metasploit-framework\bin\;D:\AndroidLab\platform-tools;C:\Android;C:\Windows\System32;C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;C:\Users\Admin\AppData\Local\Android\Sdk\tools;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Program Files\nodejs\;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\PuTTY\;C:\Users\Admin\Downloads\allure-2.34.1\bin;C:\Users\Admin\AppData\Local\Android\Sdk\tools\bin;C:\Users\Admin\AppData\Local\Android\Sdk\platform-tools;C:\Users\Admin\AppData\Roaming\npm;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Admin\scoop\shims;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Admin\AppData\Local\Apps\2.0\EJT8WD4Z.2QA\7K8EEYGN.M3V\tool..tion_81d56b313aedd2a5_0002.0000_fcdfd31f807190ef";C:\Users\Admin\AppData\Local\Microsoft\WindowsApps;C:\Users\Admin\AppData\Roaming\npm;C:\Users\Admin\eclipse\java-2025-06\eclipse;
+USERNAME=Admin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 11 , 64 bit Build 26100 (10.0.26100.5074)
+Hyper-V role detected
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12 microcode 0x100, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, system-wide physical 16190M (4513M free)
+TotalPageFile size 16190M (AvailPageFile size 153M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 61M, peak: 314M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (11.0.20+9-LTS-256) for windows-amd64 JRE (11.0.20+9-LTS-256), built on Jun 14 2023 10:34:22 by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.

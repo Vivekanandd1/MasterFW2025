@@ -10,11 +10,11 @@ public class Day21ArraySort012 {
 	        // lo: boundary for 0s
 	        // mid: current element being checked
 	        // hi: boundary for 2s
-	        int lo = 0;//0,
-	        int hi = n - 1;//5
-	        int mid = 0;//0,1
+	        int lo = 0;//1,
+	        int hi = n - 1;//4
+	        int mid = 0;//2
 	        // { 0, 1, 2, 0, 1, 2 };
-	        // { 0, 
+	        // { 0, ,2 , , ,2}
 	        
 	        // process elements until mid crosses hi
 	        while (mid <= hi) {
@@ -37,8 +37,9 @@ public class Day21ArraySort012 {
 	                // do not increment mid, as swapped value needs
 	                // to be re-checked
 	                int temp = arr[mid];//2
-	                arr[mid] = arr[hi];//
-	                arr[hi--] = temp;
+	                arr[mid] = arr[hi];//2
+	                arr[hi] = temp;
+	                hi--;
 	            }
 	        }
 	    }
