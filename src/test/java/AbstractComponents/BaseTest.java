@@ -95,10 +95,11 @@ public class BaseTest {
 	}
 
 	@AfterMethod(alwaysRun=true)
-	public void tearDown()
-	{
-		driver.close();
-		
+	public void tearDown() throws InterruptedException
+	{ 
+		if (driver != null) {
+		    driver.quit();
+		}
 		
 	}
 
